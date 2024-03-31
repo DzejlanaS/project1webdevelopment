@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FoodCart</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    
+    function exploreMenu() {
+      scrollToSection('menu');
+    }
+
+    
+    function submitReservationForm() {
+      alert('Reservation form submitted!');
+    }
+
+    
+    function sendMessage() {
+      alert('Message sent!');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="FoodCart logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="#menu" onclick="scrollToSection('menu')">Menu</a></li>
+        <li><a href="#reservations" onclick="scrollToSection('reservations')">Reservations</a></li>
+        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to FoodCart</h1>
+      <p>The Best Food in Town, Every Bite a Culinary Delight</p>
+      <button class="btn btn-explore-menu" onclick="exploreMenu()">Explore Our Menu</button>
+    </div>
+  </section>
+
+  <section id="about" class="about dark-theme">
+    <div class="about-content">
+      <h2>About FoodCart</h2>
+      <p>Journey into a realm of culinary brilliance at FoodCart, where our commitment to excellence ensures that every dining experience is nothing short of extraordinary..</p>
+      <p>Behind the scenes in our kitchen, our talented team of chefs brings passion, creativity, and expertise to every dish they prepare. With a wealth of culinary experience and a commitment to excellence, our chefs craft each meal with precision, ensuring that every plate that leaves our kitchen is a masterpiece of flavor and presentation. From innovative creations to timeless classics, our chefs' dedication shines through in every bite, promising a dining experience that exceeds expectations.</p>
+      <button class="btn btn-explore-menu" onclick="exploreMenu()">Explore Our Menu</button>
+    </div>
+    <div class="aboutimage">
+      <img src="about.jpg" alt="About Image">
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="pasta.jpg" alt="Salmon Symphony Pasta">
+        <h3>Salmon Symphony Pasta</h3>
+        <p>Taste is the soul of dining—a symphony of flavors, textures, and aromas that captivate the senses. Discover the best taste on our menu with our exquisite Pasta with Salmon. Elevating traditional pasta to a new level of luxury, this dish features tender, flaky salmon delicately folded into al dente pasta, all kissed with a flavorful sauce that tantalizes the taste buds. Each bite is a symphony of flavors. Garnished with fresh herbs and served with a touch of elegance, our Pasta with Salmon is a culinary masterpiece that promises an unforgettable dining experience. Chefs meticulously craft dishes to perfect taste, blending ingredients and techniques to create memorable experiences. Ultimately, taste transforms meals into unforgettable journeys, inviting us to savor every moment of culinary delight.</p>
+      </div>
+      <div class="menu-item">
+        <img src="sushi.jpg" alt="Japan Sushi">
+        <h3>Japan Sushi</h3>
+        <p>Transport your taste buds to the shores of Japan with our meticulously crafted sushi selection. Each piece is a work of art, showcasing the freshest ingredients and expert craftsmanship. From classic favorites like California rolls to innovative creations bursting with flavor, our sushi menu offers something for every palate. Dive into the delicate balance of flavors and textures, whether you're a sushi aficionado or a first-time explorer. With every bite, experience the essence of Japanese culinary tradition brought to life in every roll, nigiri, and sashimi slice.</p>
+      </div>
+      <div class="menu-item">
+        <img src="salad.jpg" alt="Signature Chicken Medley Salad">
+        <h3>Signature Chicken Medley Salad</h3>
+        <p>Savor the elegance of our signature Chicken Salad, a culinary delight crafted for the discerning palate. Tender, perfectly seasoned chicken paired with crisp, garden-fresh greens creates a harmonious balance of flavors and textures. Enhanced with a medley of premium ingredients, from tangy vinaigrettes to savory toppings, each bite offers a symphony of taste sensations. Elevating the concept of salad to a gourmet level, this dish embodies sophistication and taste, making it a standout choice for those with a penchant for exquisite dining experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservations" class="reservations">
+    <div class="reservation-form">
+      <h2>Make a Reservation</h2>
+      <form onsubmit="submitReservationForm(); return false;">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+        <textarea name="message" placeholder="Additional Message" rows="5"></textarea>
+        <button type="submit" class="btn btn-reserve">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <img src="customer1.jpg" alt="Customer 1">
+      <p>"I can't say enough good things about FoodCart. The food is consistently excellent, and the service is top-notch. I particularly appreciate their commitment to using fresh, locally sourced ingredients. It's clear that a lot of thought and care goes into every dish. I've dined here multiple times and have never been disappointed. Highly recommend!"</p>
+
+      <h4>Sara.D</h4>
+    </div>
+    <div class="testimonial">
+      <img src="customer2.jpg" alt="Customer 2">
+      <p>"Hands down, FoodCart is my absolute favorite dining spot in town. The atmosphere is always welcoming, and the staff make you feel like family from the moment you walk in. But let's talk about the food—it's out of this world! While everything on the menu is fantastic, my personal favorite has to be the Pasta with Salmon. It's a dish that never fails to impress, with perfectly cooked pasta, tender salmon, and a sauce that's downright addictive. Every time I take a bite, it's like a flavor explosion in my mouth. Trust me, you won't be disappointed!"</p>
+      <h4>Adi.S</h4>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="gallery1.jpg" alt="gallery1">
+      </div>
+      <div class="image-item">
+        <img src="gallery2.jpg" alt="gallery2">
+      </div>
+      <div class="image-item">
+        <img src="gallery3.jpg" alt="gallery3">
+      </div>
+      <div class="image-item">
+        <img src="gallery4.jpg" alt="gallery4">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>Address: Marijin Dvor 33, Sarajevo, Bosnia and Herzegovina</p>
+      <p>Phone: +1 337 866</p>
+      <p>Email: info@foodcart.com</p>
+      <form class="contact-form" onsubmit="sendMessage(); return false;">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</
+
+
+       
+
+
+    
+
+
+
+
