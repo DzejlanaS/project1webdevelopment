@@ -1,159 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>FoodCart</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script>
-    
-    function scrollToSection(sectionId) {
-      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    
-    function exploreMenu() {
-      scrollToSection('menu');
-    }
-
-    
-    function submitReservationForm() {
-      alert('Reservation form submitted!');
-    }
-
-    
-    function sendMessage() {
-      alert('Message sent!');
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Flowers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <style>
+        body.dark-theme {
+            background-color: #080505;
+            color: #e8ac13;
+        }
+        body.light-theme {
+            background-color: #bddadd;
+            color: #000000;
+        }
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .navbar-brand img {
+            height: 40px; /* Adjust the height as needed */
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="FoodCart logo">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
-        <li><a href="#menu" onclick="scrollToSection('menu')">Menu</a></li>
-        <li><a href="#reservations" onclick="scrollToSection('reservations')">Reservations</a></li>
-        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="light-theme">
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Logo Image and Website Name -->
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Fresh Flowers">
+                Fresh Flowers
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">What Customers Say</a></li>
+                    <li class="nav-item">
+                        <select id="themeSwitcher" class="form-control">
+                            <option value="light-theme">Light Theme</option>
+                            <option value="dark-theme">Dark Theme</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to FoodCart</h1>
-      <p>The Best Food in Town, Every Bite a Culinary Delight</p>
-      <button class="btn btn-explore-menu" onclick="exploreMenu()">Explore Our Menu</button>
-    </div>
-  </section>
+    <!-- Interactive Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center">The most beautiful flowers in town</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="first.flowee.jpg" class="img-thumbnail" data-toggle="modal" data-target="#cakeModal1">
+                </div>
+                <div class="col-md-4">
+                    <img src="tree.jpg" class="img-thumbnail" data-toggle="modal" data-target="#cakeModal2">
+                </div>
+                <div class="col-md-4">
+                    <img src="lilies.jpg" class="img-thumbnail" data-toggle="modal" data-target="#cakeModal3">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="about" class="about dark-theme">
-    <div class="about-content">
-      <h2>About FoodCart</h2>
-      <p>Journey into a realm of culinary brilliance at FoodCart, where our commitment to excellence ensures that every dining experience is nothing short of extraordinary..</p>
-      <p>Behind the scenes in our kitchen, our talented team of chefs brings passion, creativity, and expertise to every dish they prepare. With a wealth of culinary experience and a commitment to excellence, our chefs craft each meal with precision, ensuring that every plate that leaves our kitchen is a masterpiece of flavor and presentation. From innovative creations to timeless classics, our chefs' dedication shines through in every bite, promising a dining experience that exceeds expectations.</p>
-      <button class="btn btn-explore-menu" onclick="exploreMenu()">Explore Our Menu</button>
+    <!-- Modal for barbie boquet -->
+    <div class="modal fade" id="cakeModal1" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">The Barbie Pink Bouquet</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="first.flowee.jpg" class="img-fluid">
+                    <p>A delicate arrangement of pale pink Asiatic Lilies alongside Carnations and pure white Freesias.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="aboutimage">
-      <img src="about.jpg" alt="About Image">
-    </div>
-  </section>
 
-  <section id="menu" class="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-items">
-      <div class="menu-item">
-        <img src="pasta.jpg" alt="Salmon Symphony Pasta">
-        <h3>Salmon Symphony Pasta</h3>
-        <p>Taste is the soul of dining—a symphony of flavors, textures, and aromas that captivate the senses. Discover the best taste on our menu with our exquisite Pasta with Salmon. Elevating traditional pasta to a new level of luxury, this dish features tender, flaky salmon delicately folded into al dente pasta, all kissed with a flavorful sauce that tantalizes the taste buds. Each bite is a symphony of flavors. Garnished with fresh herbs and served with a touch of elegance, our Pasta with Salmon is a culinary masterpiece that promises an unforgettable dining experience. Chefs meticulously craft dishes to perfect taste, blending ingredients and techniques to create memorable experiences. Ultimately, taste transforms meals into unforgettable journeys, inviting us to savor every moment of culinary delight.</p>
-      </div>
-      <div class="menu-item">
-        <img src="sushi.jpg" alt="Japan Sushi">
-        <h3>Japan Sushi</h3>
-        <p>Transport your taste buds to the shores of Japan with our meticulously crafted sushi selection. Each piece is a work of art, showcasing the freshest ingredients and expert craftsmanship. From classic favorites like California rolls to innovative creations bursting with flavor, our sushi menu offers something for every palate. Dive into the delicate balance of flavors and textures, whether you're a sushi aficionado or a first-time explorer. With every bite, experience the essence of Japanese culinary tradition brought to life in every roll, nigiri, and sashimi slice.</p>
-      </div>
-      <div class="menu-item">
-        <img src="salad.jpg" alt="Signature Chicken Medley Salad">
-        <h3>Signature Chicken Medley Salad</h3>
-        <p>Savor the elegance of our signature Chicken Salad, a culinary delight crafted for the discerning palate. Tender, perfectly seasoned chicken paired with crisp, garden-fresh greens creates a harmonious balance of flavors and textures. Enhanced with a medley of premium ingredients, from tangy vinaigrettes to savory toppings, each bite offers a symphony of taste sensations. Elevating the concept of salad to a gourmet level, this dish embodies sophistication and taste, making it a standout choice for those with a penchant for exquisite dining experiences.</p>
-      </div>
+    <!-- Modal for palm tree-->
+    <div class="modal fade" id="cakeModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Palm tree</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="tree.jpg" class="img-fluid">
+                    <p>This inherently UV protected artificial palm tree is designed to look amazing both indoors & outdoors. Commonly chosen by interior designers to instantly enhance any space, you’ll be sure to love this ultra-realistic palm tree.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="reservations" class="reservations">
-    <div class="reservation-form">
-      <h2>Make a Reservation</h2>
-      <form onsubmit="submitReservationForm(); return false;">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="date" name="date" required>
-        <input type="time" name="time" required>
-        <textarea name="message" placeholder="Additional Message" rows="5"></textarea>
-        <button type="submit" class="btn btn-reserve">Submit</button>
-      </form>
+    <!-- Modal  for lilies boquet -->
+    <div class="modal fade" id="cakeModal3" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Luxury lilies bouquet</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="lilies.jpg" class="img-fluid">
+                    <p>Are you in search of the perfect gift that can convey your emotions with elegance and grace? Look no further than a breathtaking bouquet of white lilies. A bouquet of lilies not only symbolizes purity and devotion but also makes for a timeless and sophisticated gift for any occasion. Whether you’re celebrating a special moment or simply want to brighten someone’s day, a bouquet of white lilies is the ideal choice.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial">
-      <img src="customer1.jpg" alt="Customer 1">
-      <p>"I can't say enough good things about FoodCart. The food is consistently excellent, and the service is top-notch. I particularly appreciate their commitment to using fresh, locally sourced ingredients. It's clear that a lot of thought and care goes into every dish. I've dined here multiple times and have never been disappointed. Highly recommend!"</p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
 
-      <h4>Sara.D</h4>
-    </div>
-    <div class="testimonial">
-      <img src="customer2.jpg" alt="Customer 2">
-      <p>"Hands down, FoodCart is my absolute favorite dining spot in town. The atmosphere is always welcoming, and the staff make you feel like family from the moment you walk in. But let's talk about the food—it's out of this world! While everything on the menu is fantastic, my personal favorite has to be the Pasta with Salmon. It's a dish that never fails to impress, with perfectly cooked pasta, tender salmon, and a sauce that's downright addictive. Every time I take a bite, it's like a flavor explosion in my mouth. Trust me, you won't be disappointed!"</p>
-      <h4>Adi.S</h4>
-    </div>
-  </section>
+    <!-- What Customers Say Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">What Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>"The flowers were absolutely beautiful and fresh. The service was excellent!"</p>
+                                <footer class="blockquote-footer">Sarah J.</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>"I ordered flowers for my wedding, and they were beyond stunning. Highly recommend!"</p>
+                                <footer class="blockquote-footer">Emily R.</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>"The customer service was amazing, and the flowers were delivered on time and in perfect condition."</p>
+                                <footer class="blockquote-footer">John D.</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="gallery">
-    <h2>Gallery</h2>
-    <div class="image-grid">
-      <div class="image-item">
-        <img src="gallery1.jpg" alt="gallery1">
-      </div>
-      <div class="image-item">
-        <img src="gallery2.jpg" alt="gallery2">
-      </div>
-      <div class="image-item">
-        <img src="gallery3.jpg" alt="gallery3">
-      </div>
-      <div class="image-item">
-        <img src="gallery4.jpg" alt="gallery4">
-      </div>
-    </div>
-  </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('themeSwitcher').addEventListener('change', function() {
+            var theme = this.value;
+            document.body.className = theme;
+        });
 
-  <section id="contact" class="contact">
-    <div class="contact-container">
-      <h2>Contact Us</h2>
-      <p>Address: Marijin Dvor 33, Sarajevo, Bosnia and Herzegovina</p>
-      <p>Phone: +1 337 866</p>
-      <p>Email: info@foodcart.com</p>
-      <form class="contact-form" onsubmit="sendMessage(); return false;">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert('Message sent');
+            this.reset(); // Optional: Reset the form fields after submission
+        });
+    </script>
 </body>
-</
-
-
-       
-
-
-    
-
-
-
-
+</html>
